@@ -9,7 +9,7 @@
                 <li>Empoyees</li>
             </a>
             <a href="{{ route('admin') }}">
-                <li>Admin</li>a
+                <li>Admin</li>
             </a>
             <a href="{{route('department')}}"><li>Department</li></a>
             <a href="{{route('holidays')}}"><li>Holidays</li></a>
