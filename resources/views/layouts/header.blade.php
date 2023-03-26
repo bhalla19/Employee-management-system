@@ -15,6 +15,6 @@
             <a href="{{route('holidays')}}"><li>Holidays</li></a>
             <a href="{{route('attendance')}}"><li>Attendance</li></a>
             <a href="{{route('leaves')}}"><li>Leave Application</li></a>
-            <li>Notice Board</li>
+            {{-- <li>Notice Board</li> --}}
         </ul>
     </div>

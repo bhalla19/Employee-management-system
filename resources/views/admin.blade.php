@@ -115,8 +115,8 @@
             <li>Admin List</li>
         </ul>
     </div>
-    <div class="admin_add_btn">
-        <a href="{{ route('admin_create-pg') }}"><button class="btn btn-primary">Add New Admin ++</button></a>
+    {{-- <div class="admin_add_btn">
+        <a href="{{ route('admin_create-pg') }}"><button class="btn btn-primary">Add New Admin ++</button></a> --}}
     </div>
     <div class="table">
         <table>
