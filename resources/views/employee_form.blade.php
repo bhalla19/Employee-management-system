@@ -357,17 +357,17 @@
                         <div class="department">
                             <label for="">Department</label>
                             <select name="department" class="department_option" id="">
-                                <option value="Php_developer">Php Developer</option>
-                                <option value="HumanResource">Human Resource</option>
-                                <option value="Android_developer">Android Developer</option>
+                                <option value="Php Developer">Php Developer</option>
+                                <option value="Human Resource">Human Resource</option>
+                                <option value="Android Developer">Android Developer</option>
                             </select>
                         </div>
 
                         <div class="designation">
                             <label for="">Designation</label>
                             <select name="designation" id="designation">
-                                <option value="fresher_developer">Fresher PHP Developer</option>
-                                <option value="senior_developer">Senior PHP Developer</option>
+                                <option value="Fresher Developer">Fresher PHP Developer</option>
+                                <option value="Senior Developer">Senior PHP Developer</option>
                             </select>
                         </div>
 

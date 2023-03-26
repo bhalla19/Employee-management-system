@@ -173,19 +173,19 @@
                 </tr>
                 <tr>
                     <th>Email</th>
-                    <td>john.doe@example.com</td>
+                    <td>{{ Auth::user()->email }}</td>
                 </tr>
                 <tr>
                     <th>Phone</th>
-                    <td>(123) 456-7890</td>
+                    <td>{{ Auth::user()->phone_no }}</td>
                 </tr>
                 <tr>
                     <th>Address</th>
-                    <td>123 Main St, Anytown USA</td>
+                    <td>{{ Auth::user()->permanentAddress }}</td>
                 </tr>
                 <tr>
                     <th>Date of Birth</th>
-                    <td>01/01/1980</td>
+                    <td>{{ Auth::user()->dob }}</td>
                 </tr>
             </table>
         </section>
@@ -195,70 +195,39 @@
             <table>
                 <tr>
                     <th>Department</th>
-                    <td>Marketing</td>
+                    <td>{{ Auth::user()->department }}</td>
                 </tr>
                 <tr>
                     <th>Position</th>
-                    <td>Marketing Manager</td>
+                    <td>{{ Auth::user()->designation }}</td>
                 </tr>
                 <tr>
                     <th>Employee ID</th>
-                    <td>456</td>
+                    <td>{{ Auth::user()->employee_id }}</td>
                 </tr>
                 <tr>
                     <th>Start Date</th>
-                    <td>01/01/2020</td>
+                    <td>{{ Auth::user()->joining_date }}</td>
                 </tr>
                 <tr>
                     <th>Salary</th>
-                    <td>$100,000</td>
+                    <td>{{ Auth::user()->joining_salary }}</td>
                 </tr>
             </table>
         </section>
 
-        <section class="section">
-            <h2 class="section-header">Bank Details</h2>
-            <table>
-                <tr>
-                    <th>Branch</th>
-                    <td>Chicago</td>
-                </tr>
-                <tr>
-                    <th>Bank ID</th>
-                    <td>12345</td>
-                </tr>
-                <tr>
-                    <th>IFSC Code</th>
-                    <td>12345</td>
-                </tr>
-                <tr>
-                    <th>Bank Name</th>
-                    <td>john.doe@example.com</td>
-                </tr>
-                <tr>
-                    <th>Phone</th>
-                    <td>(123) 456-7890</td>
-                </tr>
-                <tr>
-                    <th>Address</th>
-                    <td>123 Main St, Anytown USA</td>
-                </tr>
-                <tr>
-                    <th>Routing Number</th>
-                    <td>01/01/1980</td>
-                </tr>
-            </table>
-        </section>
 
         <div class="container">
             <h1>Attendance</h1>
-            <table class="attendance-table">
+            {{-- <table class="attendance-table">
+                <form action="">
                 <tr>
-                    <th>Date</th>
+                    <th><input type="text">Date</th>
                     <th>Time In</th>
                     <th>Time Out</th>
                     <th>Status</th>
                 </tr>
+            </form>
                 <tr>
                     <td>03/01/2023</td>
                     <td>9:00 AM</td>
@@ -289,7 +258,28 @@
                     <td>5:04 PM</td>
                     <td class="present">Present</td>
                 </tr>
-            </table>
+            </table> --}}
+            <div class="attendance">
+                <form action="#" method="post">
+                    @csrf
+                    <label for="Date">Date</label>
+                    <input type="date" name="date" id="date"> <br>
+
+                    <label for="time_in">Time In</label>
+                    <input type="time" name="time_in" id="time_in"> <br>
+
+                    <label for="time_out">Time out</label>
+                    <input type="time" name="time_out" id="time_out"><br>
+
+                    <label for="status">Status</label>
+                    <select name="status" id="status">
+                        <option value="Present">Present</option>
+                        <option value="Absent">Absent</option>
+                        <option value="Late">Late</option>
+                    </select>
+                </form>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </div>
     </main>
 </body>

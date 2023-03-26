@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // use App\Models\Customer;
 use App\Models\Admin;
+use App\Models\Attendance;
 use App\Models\Department;
 use App\Models\Employee;
 use App\Models\Leaves;
 use App\Models\User;
+// use App\Models\Attendance;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Hash;
@@ -325,5 +327,21 @@ class Usercontroller extends Controller
             return view('Employee_details');
         }
         return redirect('/');
+    }
+
+    public function attendance_emp(Request $request){
+        $request->validate([
+            'date' =>'required',
+            'time_in'=>'required',
+            'time_out'=>'required',
+            'status' =>'required'
+        ]);
+        $attendance = new Attendance();
+        $attendance->date = $request['date'];
+        $attendance->time_in = $request['time_in'];
+        $attendance->time_out = $request['time_out'];
+        $attendance->status = $request['status'];
+        $attendance->save();
+        return redirect()->back();
     }
 }
