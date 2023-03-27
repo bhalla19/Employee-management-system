@@ -139,7 +139,7 @@
                 <th>Time In</th>
                 <th>Time Out</th>
             </tr>
-            @foreach($attendance as $items)
+            @foreach ($attendance as $items)
                 <tr>
                     <td>{{ $items->attendance_id }}</td>
                     <td>{{ $items->employee_id }}</td>
@@ -148,7 +148,6 @@
                     <td>{{ $items->time_out }}</td>
                 </tr>
             @endforeach
-
         </table>
     @endsection
 </body>

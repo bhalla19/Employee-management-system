@@ -331,7 +331,9 @@ class Usercontroller extends Controller
 
     public function attendance_data()
     {
-        $attendance = Attendance::all(); // retrieve attendance data from the database
+        $attendance = Attendance::get(); // retrieve attendance data from the database
         return view('attendance', ['Attendance' => $attendance]); // pass the data to the view
     }
+
+
 }
