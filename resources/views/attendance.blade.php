@@ -132,33 +132,24 @@
     @section('main-section')
         <h1>Employee Attendance Tracker</h1>
         <table>
-            <thead>
+            <tr>
+                <th>Attendance ID</th>
+                <th>Employee ID</th>
+                <th>Date</th>
+                <th>Time In</th>
+                <th>Time Out</th>
+            </tr>
+            @foreach($attendance as $items)
                 <tr>
-                    <th>Name</th>
-                    <th>Employee ID</th>
-                    <th>Date</th>
-                    <th>Time In</th>
-                    <th>Time Out</th>
-                    <th>Status</th>
+                    <td>{{ $items->attendance_id }}</td>
+                    <td>{{ $items->employee_id }}</td>
+                    <td>{{ $items->date }}</td>
+                    <td>{{ $items->time_in }}</td>
+                    <td>{{ $items->time_out }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td>001</td>
-                    <td>Mar 25, 2023</td>
-                    <td><input type="time"></td>
-                    <td><input type="time"></td>
-                    <td><select>
-                            <option value="present">Present</option>
-                            <option value="absent">Absent</option>
-                            <option value="late">Late</option>
-                        </select></td>
-                </tr>
-                <!-- add more rows for additional employees -->
-            </tbody>
+            @endforeach
+
         </table>
-        <button>Submit</button>
     @endsection
 </body>
 

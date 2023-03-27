@@ -78,7 +78,7 @@
 
         .table {
             border-collapse: collapse;
-            width: 63%;
+            width: 55%;
             position: absolute;
             top: 322px;
             left: 341px;
@@ -87,10 +87,9 @@
         }
 
         .table th {
-
             border-collapse: collapse;
-            width: 27%;
-            padding: 9px 31px 11px 55px;
+            width: 44%;
+            padding: 10px 0px 10px 7px;
         }
     </style>
 </head>

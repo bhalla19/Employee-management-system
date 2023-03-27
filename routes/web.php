@@ -44,4 +44,4 @@ Route::get('/apply-leave',[Usercontroller::class,'leaves_form'])->name('leaves_f
 Route::post('/apply-leave',[Usercontroller::class,'leaves_data'])->name('leaves_data');
 Route::get('/signout', [Usercontroller::class, 'signOut'])->name('signOut');
 Route::get('/admin-signout',[Usercontroller::class,'signOut'])->name('signOut');
-// Route::get('/employee-details',[Usercontroller::class,'attendance'])
+Route::post('/employee-details',[Usercontroller::class,'attendance_emp'])->name('employee-details');

@@ -225,8 +225,6 @@ class Usercontroller extends Controller
             'password' => 'required'
         ]);
 
-        // $credentials = $request->only('email', 'password');
-
         $email = $request->input('email');
         $password = $request->input('password');
 
@@ -238,8 +236,6 @@ class Usercontroller extends Controller
         }
 
         return redirect('/login')->with('message', 'Invalid credentials');
-
-        // return redirect('/login')->with('message', 'Login details are not valid!');
     }
     public function postlogin_admin(Request $request)
     {
@@ -247,8 +243,6 @@ class Usercontroller extends Controller
             'email' => 'required',
             'password' => 'required'
         ]);
-
-        // $credentials = $request->only('email', 'password');
 
         $email = $request->input('email');
         $password = $request->input('password');
@@ -258,31 +252,20 @@ class Usercontroller extends Controller
 
         if ($user && $password == $user->password) {
             if ($user->is_admin) {
-                // dd($users->all("items"));
                 $users = User::where('is_admin', false)->get();
                 Auth::login($user);
                 return view('admin', ['users' => $users]);
-                        } else {
+            } else {
                 return redirect('/admin-login')->with('message', 'You are not an Admin');
             }
         }
         return redirect('/admin-login')->with('message', 'Invalid credentials');
-
-
-        // return redirect('/login')->with('message', 'Login details are not valid!');
     }
     public function post_admin_login()
     {
         return view('admin_login');
     }
-    // public function postsignup(Request $request)
-    // {
-    //     $request->validate([
-    //         'name' => 'required',
-    //         'email' => 'required',
-    //         'password' => 'required'
-    //     ]);
-    // }
+
     public function register_pg()
     {
         return view('register');
@@ -292,8 +275,7 @@ class Usercontroller extends Controller
     public function leaves()
     {
         $leaves = Leaves::all();
-        $stored_data = compact('leaves'); //stored_data is var who store $admin data
-        // return view('admin')
+        $stored_data = compact('leaves');
         return view('leaves')->with($stored_data);
     }
     public function leaves_form()
@@ -329,19 +311,27 @@ class Usercontroller extends Controller
         return redirect('/');
     }
 
-    public function attendance_emp(Request $request){
+    public function attendance_emp(Request $request)
+    {
         $request->validate([
-            'date' =>'required',
-            'time_in'=>'required',
-            'time_out'=>'required',
-            'status' =>'required'
+            'date' => 'required',
+            'time_in' => 'required',
+            'time_out' => 'required',
+            'status' => 'required'
         ]);
         $attendance = new Attendance();
         $attendance->date = $request['date'];
         $attendance->time_in = $request['time_in'];
         $attendance->time_out = $request['time_out'];
         $attendance->status = $request['status'];
+        $attendance->employee_id = $request['employee_id'];
         $attendance->save();
-        return redirect()->back();
+        return redirect('/employee_details');
+    }
+
+    public function attendance_data()
+    {
+        $attendance = Attendance::all(); // retrieve attendance data from the database
+        return view('attendance', ['Attendance' => $attendance]); // pass the data to the view
     }
 }

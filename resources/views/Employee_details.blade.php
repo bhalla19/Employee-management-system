@@ -260,8 +260,12 @@
                 </tr>
             </table> --}}
             <div class="attendance">
-                <form action="#" method="post">
+                <form action="{{route('employee-details')}}" method="post">
                     @csrf
+
+                    <label for="employee_id">Employee Id</label>
+                    <input type="number" name="employee_id"><br>
+
                     <label for="Date">Date</label>
                     <input type="date" name="date" id="date"> <br>
 
@@ -273,12 +277,12 @@
 
                     <label for="status">Status</label>
                     <select name="status" id="status">
-                        <option value="Present">Present</option>
                         <option value="Absent">Absent</option>
+                        <option value="Present">Present</option>
                         <option value="Late">Late</option>
                     </select>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
     </main>

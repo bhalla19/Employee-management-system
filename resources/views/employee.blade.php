@@ -92,7 +92,8 @@
                     <th>Employee ID</th>
                     <th>Name</th>
                     <th>Department</th>
-                    <th>Action</th>
+                    <th>Actions</th>
+                    {{-- <th></th> --}}
                 </tr>
                 @foreach ($users as $items)
                     <tr>

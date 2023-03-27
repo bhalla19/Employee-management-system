@@ -63,7 +63,7 @@
             border-collapse: collapse;
             width: 50%;
             position: absolute;
-            top: 244px;
+            top: 107px;
             left: 365px;
             border: 3px solid blue;
             border-radius: 3px;
