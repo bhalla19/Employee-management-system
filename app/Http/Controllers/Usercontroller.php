@@ -330,10 +330,9 @@ class Usercontroller extends Controller
     }
 
     public function attendance_data()
-    {
-        $attendance = Attendance::get(); // retrieve attendance data from the database
-        return view('attendance', ['Attendance' => $attendance]); // pass the data to the view
-    }
-
-
+{
+    $attendance = Attendance::all();
+    $attendance_data = compact('attendance'); // retrieve attendance data from the database
+    return view('attendance')->with($attendance_data); // pass the data to the view
+}
 }

@@ -36,7 +36,7 @@ Route::get('/department',[Usercontroller::class,'department'])->name('department
 Route::get('/department/create',[Usercontroller::class,'department_addDepart'])->name('department_addDepart');
 Route::post('/department/create',[Usercontroller::class,'department_create'])->name('department_create');
 Route::get('/department/delete/{id}',[Usercontroller::class,'department_destroy'])->name('department_destroy');
-Route::get('/attendance',[Usercontroller::class,'attendance'])->name('attendance');
+Route::get('/attendance',[Usercontroller::class,'attendance_data'])->name('attendance');
 Route::get('/leaves',[Usercontroller::class,'leaves'])->name('leaves');
 Route::get('/admin-login',[Usercontroller::class,'post_admin_login'])->name('post_admin_login');
 Route::post('/admin-login',[Usercontroller::class,'postlogin_admin'])->name('postlogin_admin');
