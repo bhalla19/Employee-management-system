@@ -138,6 +138,7 @@
                 <th>Date</th>
                 <th>Time In</th>
                 <th>Time Out</th>
+                <th>Status</th>
             </tr>
             @foreach ($attendance as $attendances)
                 <tr>
