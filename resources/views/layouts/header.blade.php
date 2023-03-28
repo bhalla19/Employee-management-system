@@ -1,6 +1,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Admin Portal</a>
+            {{-- <h3 style="color: white">{{Auth::user()->name}}</h3> --}}
             <a name="admin_btn" id="admin_btn" class="btn btn-primary" href="{{route('signOut')}}" role="button">Logout</a>
     </div>
     <div class="sidebar">
