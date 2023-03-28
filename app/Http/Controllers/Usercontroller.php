@@ -254,7 +254,7 @@ class Usercontroller extends Controller
             if ($user->is_admin) {
                 $users = User::where('is_admin', false)->get();
                 Auth::login($user);
-                return view('admin', ['users' => $users]);
+                return view('employee', ['users' => $users]);
             } else {
                 return redirect('/admin-login')->with('message', 'You are not an Admin');
             }
@@ -310,6 +310,14 @@ class Usercontroller extends Controller
         }
         return redirect('/');
     }
+
+    // public function dashboard()
+    // {
+    //     if (Auth::check()) {
+    //         return view('Employee_details');
+    //     }
+    //     return redirect('/');
+    // }
 
     public function attendance_emp(Request $request)
     {
